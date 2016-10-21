@@ -1,7 +1,7 @@
 {
   "isDev": true,
   "server": {
-    "port": 8888,
+    "port": process.env.PORT || 8888,
     "/* secure */": "/* whether this connects via https */",
     "secure": false,
     "key": null,
@@ -14,13 +14,13 @@
   },
   "stunservers": [
     {
-      "url": "stun:stun.l.google.com:19302"
+      "url": "stun:52.87.238.190"
     }
   ],
   "turnservers": [
     {
-      "urls": ["turn:your.turn.servers.here"],
-      "secret": "turnserversharedsecret",
+      "urls": ["turn:52.87.238.190"],
+      "secret": "",
       "expiry": 86400
     }
   ]
