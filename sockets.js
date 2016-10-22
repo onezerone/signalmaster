@@ -5,11 +5,12 @@ var socketIO = require('socket.io'),
 module.exports = function (server, config) {
     var io = socketIO.listen(server);
 
+    io.set('transports', ['websocket']);
     io.sockets.on('connection', function (client) {
         client.resources = {
             screen: false,
             video: true,
-            audio: false
+            audio: true
         };
 
         // pass a message to another id
